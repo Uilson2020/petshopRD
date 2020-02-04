@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const EMPRESA="**************** PETSHOP DA RD *******************";
+        console.log(EMPRESA)
+        let pets = [
+        {
+            nome:"Cheirosa", 
+            idade: 9,
+            raca: "Vira-lata",
+            tipo: "Cachorro",
+            peso: 11.7,
+            cor: "Amarelo",
+            dono: {
+                nome: "Renato",
+                idade: null,
+            },
+            vacinado: false,
+            servicos: ["Banho", "Vacina"]
+        },
+        {
+            nome:"Frajola", 
+            idade: 8,
+            raca: "Vira-lata",
+            tipo: "Gato",
+            peso: 2.4,
+            cor: "Preto",
+            dono: {
+                nome: "Uill",
+                idade: null,
+            },
+            vacinado: true,
+            servicos: ["Banho", "Vacina"]
+        }
+        ]
+    
+
+        const vacinar = (cachorro) => {
+            //implementar funcao
+            if (cachorro.vacinado){
+                console.log("Esse cachorro já está vacinado!");
+            }else{
+                cachorro.vacinado = true;
+                console.log("vacina aplicada com sucesso!");
+            }
+        }
+        
+
+    const adicionarPet = (nome, idade, raca, tipo, peso, cor, dono, vacinado, servicos) => {
+    
+    let petNovo = {
+        nome:nome,
+        idade:idade,
+        raca:raca,
+        tipo:tipo,
+        peso:peso,
+        cor:cor,
+        dono: {
+            nome:undefined,
+            idade:null,
+        },
+        vacinado,
+        servicos    
+    }
+    pets.push(petNovo)
+    console.log("vira lata adicionado com sucesso!")
+    return petNovo;
+}
+
+    // console.log("-----------------------------------------");
+    // console.log("Nome do pet: "+ pets[0].nome);
+    // console.log("Tipo do pet: "+ pets[0].tipo);
+    // console.log(pets[0].vacinado?"Esse pet já está vacinado":"Esse pet ainda não foi vacinado!");
+    
+    // function exibir(){
+    //     for (let i=0; i<pets.length; i++){
+    //         console.log("--------------------------------------------------------------------------");
+    //         console.log("Nome do pet: "+ pets[i].nome);
+    //         console.log("Tipo do pet: "+ pets[i].tipo);
+    //         console.log(pets[i].vacinado?"Esse pet já está vacinado":"Esse pet ainda não foi vacinado!");
+    //     } 
+    // }
+
+    // function exibir(){
+    //     pets.forEach(function(valor, index){
+    //         console.log("--------------------------------------------------------------------------");
+    //         console.log("Nome do pet: "+ valor.nome);
+    //         console.log("Tipo do pet: "+ valor.tipo);
+    //         console.log(pets.vacinado?"Esse pet já está vacinado":"Esse pet ainda não foi vacinado!");
+    //     });
+
+    // }
+
+    const exibir = ()=>{
+        pets.forEach((valor, index)=>{
+            console.log("--------------------------------------------------------------------------");
+            console.log("Nome do pet: "+ valor.nome);
+            console.log("Tipo do pet: "+ valor.tipo);
+            console.log(pets.vacinado?"Esse pet já está vacinado":"Esse pet ainda não foi vacinado!");
+        });
+    }
+    exibir();
+
+
+    let petsTipoGato = [];
+
+    pets.forEach((pet, index)=>{
+        if (pet.tipo == "Gato"){
+            petsTipoGato.push(pet)
+        }
+    });
+
+
+    //filter
+    const filtraPetsGatos = ()=>{
+        let listaPetsGatos = pets.filter(function(pet, index){
+            return pet.tipo == "Gato"
+        })
+        return listaPetsGatos
+    }
+
+    // const VacinarGeral = ()=>{
+    //     let retorno = pets.map( function(pet, index){
+    //         //vacinar(pet)
+    //         pet.vacinado = true;
+    //         return pet
+    //     })
+    //     return retorno
+    // }
+
+    // 2º forma de 
+    const VacinarGeral = ()=>{
+        return pets.map( function(pet, index){
+            pet.vacinado = true
+            return pet
+        })
+    }
+    </script>
+</body>
+</html>
