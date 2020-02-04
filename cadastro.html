@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+
+function adicionarPet(nome, idade, raca, tipo, peso, cor, dono, vacinado, servicos){
+    
+    let petNovo = {
+        nome:nome,
+        idade:idade,
+        raca:raca,
+        tipo:tipo,
+        peso:peso,
+        cor:cor,
+        dono: {
+            nome:null,
+            idade:null,
+        },
+        vacinado,
+        servicos    
+    }
+    pets.push(petNovo)
+    console.log("vira lata adicionado com sucesso!")
+}
+</script>
+</body>
+</html>
